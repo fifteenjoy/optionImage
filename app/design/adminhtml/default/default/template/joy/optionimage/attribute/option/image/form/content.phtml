@@ -1,0 +1,48 @@
+
+<?php foreach ($this->getOptionValues() as $item): ?>
+    <?php $data = $item->getData("data") ?>
+    <div class="entry-edit">
+
+        <div class="entry-edit-head collapseable">
+            <!-- add toggle Collapse icon-->
+            <a id="<?php echo $item->fieldset_id ?>-head" href="#"
+               onclick="Fieldset.toggleCollapse('<?php echo $item->fieldset_id ?>'); return false;"
+               ><?php echo $data[0]['label'] ?></a>
+            <div class="form-buttons"></div>
+        </div>
+        <div class="fieldset fieldset-wide" id="<?php echo $item->fieldset_id ?>" style="display:none">
+            <div class="hor-scroll">
+                <table cellspacing="0" class="form-list">
+                    <tbody>
+                    <?php foreach ($data as $store_id => $value): ?>
+                    <tr>
+                        <td class=""><?php echo $value['storecode'] ?></td>
+                        <td class="label"><label
+                                for="<?php echo $item->id . "-" . $value['storecode'] ?>"><?php echo $value['label'] ?></label>
+                        </td>
+                        <td class="value">
+                            <?php if($value['image']):?>
+                            <a href="<?php echo $value['image'] ?>"
+                               onclick="imagePreview('<?php echo $item->id . "-" . $value['storecode'] ?>_image'); return false;"><img
+                                    src="<?php echo $value['image']?>" id="<?php echo $item->id . "-" . $value['storecode'] ?>_image"
+                                    title=<?php echo $value['label']?> alt="<?php echo $value['label']?>" height="22" width="22"
+                                    class="small-image-preview v-middle"></a> <input id="<?php echo $item->id . "-" . $value['storecode']?>"
+                                                                                     name="data[<?php echo $item->id?>][<?php echo $store_id?>]"
+                                                                                     value="<?php echo $value['label']?>"
+                                                                                     class="input-file" type="file">
+                            <span class="delete-image"><input type="checkbox" name="data[<?php echo $item->id?>][<?php echo $store_id?>][delete]" value="1"
+                                                              class="checkbox" id="<?php echo $item->id . "-" . $value['storecode']?>_delete"><label
+                                    for="<?php echo $item->id . "-" . $value['storecode']?>n_delete"> Delete Image</label>
+                                </span>
+                          <?php else:?>
+                                <input id="<?php echo $item->id . "-" . $value['storecode']?>" name="data[<?php echo $item->id?>][<?php echo $store_id?>]" value="" class="input-file" type="file">
+                          <?php endif;?>
+                        </td>
+                    </tr>
+                    <?php endforeach;?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>

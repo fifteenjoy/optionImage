@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento
+ *
+ */
+-->
+<config>
+    <modules>
+        <Joy_Optionimage>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Joy_Optionimage>
+    </modules>
+</config>

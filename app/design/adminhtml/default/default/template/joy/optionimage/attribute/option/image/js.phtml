@@ -1,0 +1,19 @@
+
+<script type="text/javascript">
+//<![CDATA[
+function saveAndContinueEdit(){
+    disableElements('save');
+    if (editForm.submit($('edit_form').action+'back/1') == false) {
+        enableElements('save');
+    }
+}
+
+function saveImage(){
+    disableElements('save');
+    if (editForm.submit() == false){
+        enableElements('save');
+    }
+}
+
+//]]>
+</script>

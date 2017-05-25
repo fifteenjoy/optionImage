@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <catalog translate="title" module="catalog">
+            <children>
+                <attributes>
+                    <children>
+                    <images translate="title" module="joy_optionimage">
+                        <title>Manage Attribute Option Images</title>
+                        <action>adminhtml/attribute_option_image/</action>
+                    </images>
+                    </children>
+                </attributes>
+            </children>
+            </catalog>
+        </menu>
+    <acl>
+        <resources>
+            <attrib>
+                <title>Manage Attribute Images</title>
+            </attrib>
+            <admin>
+                <children>
+                    <catalog>
+                        <children>
+                            <attributes>
+                                <children>
+                            <attribute_option_images>
+                                <title>Manage Attribute Option Images</title>
+                            </attribute_option_images>
+                                </children>
+                            </attributes>
+                        </children>
+                    </catalog>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    </config>

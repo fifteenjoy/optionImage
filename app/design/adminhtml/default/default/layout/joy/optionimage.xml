@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_attribute_option_image_index>
+        <referense name="head">
+            <action method="setTitle" translate="title"><title>Catalog</title></action>
+        </referense>
+        <reference name="menu">
+            <action method="setActive"><menupath>catalog/products</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="joy_optionimage/adminhtml_attribute" name="attribute_list">
+            </block>
+        </reference>
+    </adminhtml_attribute_option_image_index>
+    <adminhtml_attribute_option_image_edit>
+        <referense name="head">
+            <action method="setTitle" translate="title"><title>Catalog</title></action>
+        </referense>
+        <reference name="menu">
+            <action method="setActive"><menupath>catalog/products</menupath></action>
+        </reference>
+        <reference name="content">
+            <block type="joy_optionimage/adminhtml_attribute_option_image_edit" name="image_edit">
+            </block>
+        </reference>
+        <reference name="js">
+            <block type="adminhtml/template" name="attribute_image_edit_js" template="joy/optionimage/attribute/option/image/js.phtml"></block>
+        </reference>
+    </adminhtml_attribute_option_image_edit>
+</layout>
